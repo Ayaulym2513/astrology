@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Жұлдыздардың Түрлері</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <style>
+        /* Жалпы стильдер */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Хедер */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-bottom: 0;
+        }
+
+        /* Навигация меню */
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f0db4f;
+        }
+
+        .navbar-nav .nav-link.active {
+            font-weight: bold;
+            color: #f0db4f !important;
+        }
+
+        /* Контент */
+        .content {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .stars-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .star-card {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            width: 18%;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease;
+        }
+
+        .star-card:hover {
+            transform: scale(1.05);
+        }
+
+        .star-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .star-card p {
+            font-size: 1rem;
+            color: #dcdcdc;
+        }
+
+        .star-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Полоса загрузки (жүктелу барысы) */
+        .progress-bar-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .progress-bar {
+            background-color: #2ecc71;
+            height: 20px;
+            border-radius: 10px;
+            margin: 10px;
+            width: 0%;
+            animation: progressAnimation 3s ease-in-out infinite;
+        }
+
+        /* Жүктелу барысының анимациясы */
+        @keyframes progressAnimation {
+            0% {
+                width: 0%;
+            }
+            50% {
+                width: 50%;
+            }
+            100% {
+                width: 100%;
+            }
+        }
+
+        /* Әр түрлі түстер */
+        .progress-bar-1 {
+            background-color: #b90000; /* Көк */
+        }
+
+        .progress-bar-2 {
+            background-color: #2ecc71; /* Жасыл */
+        }
+
+        .progress-bar-3 {
+            background-color: #f39c12; /* Сары */
+        }
+
+        .progress-bar-4 {
+            background-color: #e74c3c; /* Қызыл */
+        }
+
+        .progress-bar-5 {
+            background-color: #8e44ad; /* Фиолет */
+        }
+
+        /* Жүктелу жолағының активті күйі */
+        .progress-bar:active {
+            width: 100%;
+        }
+
+        .progress-label {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 20px 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Таблица */
+        .result-table {
+            width: 80%;
+            margin-top: 40px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+
+        .result-table th, .result-table td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .result-table th {
+            background-color: #2980b9;
+        }
+
+        .result-table tr:nth-child(even) {
+            background-color: #2c3e50;
+        }
+
+        .result-table tr:nth-child(odd) {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <!-- Хедер меню -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Астрономия</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="09lab.html">Басты бет</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="11lab.html">Жұлдыздар</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ғалам туралы
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="5lab.html">Жұлдыздардың түрлері</a></li>
+                            <li><a class="dropdown-item" href="planet.html">Планеталар</a></li>
+                            <li><a class="dropdown-item" href="gg.html">Галактикалар</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="210lab.html">Байланыс</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Контент -->
+    <div class="content">
+        <h2>Жұлдыздардың түрлері</h2>
+        <div class="stars-container">
+            <!-- Бірінші жұлдыз карточкасы -->
+            <div class="star-card">
+                <img src="супернова.webp" alt="Жұлдыз 1">
+                <h3>Суперновалар</h3>
+                <p>Суперновалар — бұл үлкен жұлдыздардың жарқырап жарылу процесі, ол бүкіл галактикада жарықтың көп бөлігін шығарады.</p>
+            </div>
+            <!-- Екінші жұлдыз карточкасы -->
+            <div class="star-card">
+                <img src="нейтрон.webp" alt="Жұлдыз 2">
+                <h3>Нейтронды жұлдыздар</h3>
+                <p>Нейтронды жұлдыздар — өте тығыз, қара жұлдыздың қалдықтарынан тұратын жұлдыздар. Олар өте күшті магниттік өрістерге ие.</p>
+            </div>
+            <!-- Үшінші жұлдыз карточкасы -->
+            <div class="star-card">
+                <img src="аг.webp" alt="Жұлдыз 3">
+                <h3>Ақ гиганттар</h3>
+                <p>Ақ гиганттар — өте үлкен жұлдыздар, олардың радиусы Күннен 10-20 есе үлкенболуы мүмкін.</p>
+            </div>
+            <!-- Төртінші жұлдыз карточкасы -->
+            <div class="star-card">
+                <img src="зв.webp" alt="Жұлдыз 4">
+                <h3>Қызыл гиганттар</h3>
+                <p>Қызыл гиганттар — өздерінің ядросында сутек отынын аяқтаған кезде кеңейіп, қызғылт түс алады.</p>
+            </div>
+            <!-- Бесінші жұлдыз карточкасы -->
+            <div class="star-card">
+                <img src="пульс.webp" alt="Жұлдыз 5">
+                <h3>Пульсарлар</h3>
+                <p>Пульсарлар — жоғары жылдамдықпен айналатын нейтронды жұлдыздар, олар радиотолқындарды шығарады.</p>
+            </div>
+        </div>
+
+        <!-- Полоса загрузки (жүктелу барысы) -->
+        <div class="progress-bar-container">
+            <div class="progress-bar progress-bar-1"></div>
+            <div class="progress-label">Суперновалар: 90%</div>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar progress-bar-2"></div>
+            <div class="progress-label">Нейтронды жұлдыздар: 80%</div>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar progress-bar-3"></div>
+            <div class="progress-label">Ақ гиганттар: 85%</div>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar progress-bar-4"></div>
+            <div class="progress-label">Қызыл гиганттар: 70%</div>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar progress-bar-5"></div>
+            <div class="progress-label">Пульсарлар: 60%</div>
+        </div>
+
+        <!-- Таблица с итогами -->
+        <table class="result-table">
+            <thead>
+                <tr>
+                    <th>Жұлдыз түрі</th>
+                    <th>Жарқырауы</th>
+                    <th>Ерекшеліктері</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Суперновалар</td>
+                    <td>Жарқын жарылыс</td>
+                    <td>Үлкен жұлдыздардың жарылуы, галактикадағы жарықтың көп бөлігін шығарады.</td>
+                </tr>
+                <tr>
+                    <td>Нейтронды жұлдыздар</td>
+                    <td>Өте тығыз</td>
+                    <td>Нейтронды жұлдыздардың қалдықтары, күшті магниттік өрістерге ие.</td>
+                </tr>
+                <tr>
+                    <td>Ақ гиганттар</td>
+                    <td>Үлкен радиус</td>
+                    <td>Күннен 10-20 есе үлкен радиусқа ие өте үлкен жұлдыздар.</td>
+                </tr>
+                <tr>
+                    <td>Қызыл гиганттар</td>
+                    <td>Қызғылт түс</td>
+                    <td>Сутек отынын аяқтаған жұлдыздар, қызғылт түс алатын кезеңде.</td>
+                </tr>
+                <tr>
+                    <td>Пульсарлар</td>
+                    <td>Жоғары жылдамдықпен айналатын</td>
+                    <td>Нейтронды жұлдыздар, радиотолқындар шығарады.</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Жұлдыздар Әлемі. Барлық құқықтар қорғалған.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

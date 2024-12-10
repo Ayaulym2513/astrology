@@ -1,0 +1,236 @@
+
+
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Астрономия Әлемі</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('зв.webp') no-repeat center center/cover;
+            color: white;
+            height: 100vh;
+        }
+
+        /* Хидер навигация */
+        .navbar {
+            background: rgba(0, 0, 0, 0.8);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #f0db4f !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f0db4f;
+        }
+
+        .navbar-nav .nav-link.active {
+            font-weight: bold;
+            color: #f0db4f !important;
+        }
+
+        /* Dropdown меню */
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f0db4f;
+            color: black;
+        }
+
+        /* Ай */
+        .moon {
+            width: 150px;
+            height: 150px;
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/FullMoon2010.jpg/600px-FullMoon2010.jpg') no-repeat center center/cover;
+            border-radius: 50%;
+            animation: float 4s ease-in-out infinite;
+            margin: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Айдың анимациясы */
+        @keyframes float {
+            0%, 100% {
+                transform: translate(-50%, -50%);
+            }
+            50% {
+                transform: translate(-50%, -60%);
+            }
+        }
+
+        /* Контент */
+        .content {
+            text-align: center;
+            padding: 20px;
+            margin-top: 300px;
+        }
+
+        .content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        /* Слайд-меню */
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f0db4f;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            left: 10px;
+            font-size: 36px;
+            color: white;
+            padding: 10px 20px;
+            transition: 0.3s;
+        }
+
+        /* Кнопка открытия меню */
+        .openbtn {
+            font-size: 30px;
+            cursor: pointer;
+            background-color: transparent;
+            color: white;
+            border: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Хидер меню -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Астрономия</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Басты бет</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="11lab.html">Жұлдыздар</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Ғалам туралы
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="5lab.html">Жұлдыздардың түрлері</a></li>
+                            <li><a class="dropdown-item" href="planet.html">Планеталар</a></li>
+                            <li><a class="dropdown-item" href="gg.html">Галактикалар</a></li>
+                            <li><a class="dropdown-item" href="13lab.html">басты бет</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Байланыс</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Слайд-меню -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">Басты бет</a>
+        <a href="11lab.html">Жұлдыздар</a>
+        <a href="5lab.html">Жұлдыздардың түрлері</a>
+        <a href="planet.html">Планеталар</a>
+        <a href="gg.html">Галактикалар</a>
+        <a href="210lab.html">Байланыс</a>
+    </div>
+
+    <!-- Кнопка для открытия слайд-меню -->
+    <button class="openbtn" onclick="openNav()">☰</button>
+
+    <!-- Ай -->
+    <div class="moon"></div>
+
+    <!-- Контент -->
+    <div class="content">
+        <h2>Ғаламның құпиялары</h2>
+        <p>
+            Астрономия – бұл ғарыштағы денелер мен құбылыстарды зерттейтін ғылым. 
+            Біздің әлеміміз шексіз және таңғажайып. Осы сайттан жұлдыздар, планеталар 
+            және галактикалар туралы көптеген қызықты мәліметтер таба аласыз.
+        </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Открытие слайд-меню
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        // Закрытие слайд-меню
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</body>
+</html>

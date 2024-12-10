@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Галактика Сайты</title>
+  <style>
+    /* Жалпы стильдер */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0d0d2b;
+      color: white;
+    }
+
+    /* Навигация менюі */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1a1a40;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .navbar ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar li {
+      position: relative;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #00bcd4;
+    }
+
+    /* Галерея стильдері */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    .card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      opacity: 0.5;
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .card:hover img {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .card .info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      color: white;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .card p {
+      margin: 0.5rem 0 0;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Навигация менюі -->
+  <header class="navbar">
+    <ul>
+      <li><a href="09lab.html">Басты бет</a></li>
+      <li><a href="gg.html">Галактика түрлері</a></li>
+      <li><a href="11lab.html">Ғарыш жаңалықтары</a></li>
+      <li><a href="210lab.html">Байланыс</a></li>
+    </ul>
+  </header>
+
+  <!-- Галерея -->
+  <main class="gallery">
+    <div class="card">
+      <img src="спиральная.webp" alt="Спиральды Галактика">
+      <div class="info">
+        <h3>Спиральды Галактика</h3>
+        <p>Иірім түріндегі галактика.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="галактика.webp" alt="Эллиптикалық Галактика">
+      <div class="info">
+        <h3>Эллиптикалық Галактика</h3>
+        <p>Эллипс пішініндегі галактика.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="тт.webp" alt="Тәртіпсіз Галактика">
+      <div class="info">
+        <h3>Тәртіпсіз Галактика</h3>
+        <p>Құрылымы жоқ галактика.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="гт.webp" alt="Лентикулярлы Галактика">
+      <div class="info">
+        <h3>Лентикулярлы Галактика</h3>
+        <p>Спиральды мен эллиптикалықтың ортасындағы түр.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="сп.webp" alt="Жолақты Спиральды Галактика">
+      <div class="info">
+        <h3>Жолақты Спиральды Галактика</h3>
+        <p>Жолақ түріндегі спиральды галактика.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="гн.webp" alt="Гном Галактикасы">
+      <div class="info">
+        <h3>Гном Галактикасы</h3>
+        <p>Кішкентай галактиканың түрі.</p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
